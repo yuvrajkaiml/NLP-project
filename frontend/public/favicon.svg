@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="saffronGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffa234" />
+      <stop offset="100%" stop-color="#ff8208" />
+    </linearGradient>
+    <linearGradient id="inkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2e3e" />
+      <stop offset="100%" stop-color="#15171f" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#inkGrad)" />
+  <circle cx="24" cy="30" r="16" stroke="url(#saffronGrad)" stroke-width="2.5" opacity="0.3" />
+  <!-- 'अ' Symbol in Saffron -->
+  <text x="14" y="42" font-family="'Noto Sans Devanagari', serif" font-weight="700" font-size="28" fill="url(#saffronGrad)">अ</text>
+  <!-- 'A' Symbol in Pure White -->
+  <text x="34" y="44" font-family="'Fraunces', serif" font-weight="700" font-size="28" fill="#ffffff">A</text>
+  <path d="M28 44 C 32 38, 36 38, 40 44" stroke="#ffa234" stroke-width="2" stroke-linecap="round" fill="none"/>
+</svg>

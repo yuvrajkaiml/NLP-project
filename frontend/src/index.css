@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface text-ink-900 font-body antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02";
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    letter-spacing: -0.02em;
+  }
+
+  .text-hindi {
+    @apply font-hindi;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-ink-200 dark:bg-ink-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ink-400 dark:bg-ink-500;
+}
+
+/* Glassmorphism & Accent Utilities */
+.glass-panel {
+  @apply bg-surface-raised/85 dark:bg-surface-dark-raised/85 backdrop-blur-md border border-ink-100 dark:border-ink-800 shadow-soft;
+}
+
+.saffron-gradient {
+  background: linear-gradient(135deg, #ffa234 0%, #ff8208 50%, #f06500 100%);
+}
+
+.saffron-glow {
+  box-shadow: 0 0 25px -4px rgba(255, 130, 8, 0.35);
+}
+
+.card-lift {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  @apply shadow-lift;
+}

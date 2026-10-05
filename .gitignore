@@ -1,0 +1,38 @@
+# Python
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.sqlite3
+*.db
+hinglishflow.db
+model_cache/
+**/model_cache/
+.pytest_cache/
+**/.pytest_cache/
+
+# Node & Frontend
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.vite/
+**/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment & OS
+.env
+**/.env
+!.env.example
+**/.env.example
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
