@@ -47,8 +47,33 @@ def test_all_10_hinglish_test_cases(hinglish_input, expected_sub):
     assert data["detected_language"] == "hinglish"
     assert data["transliterated_text"] is not None
     assert expected_sub.lower() in data["translated_text"].lower()
-    assert data["confidence"] > 0.8
+    assert data["confidence"] >= 0.90
     assert data["processing_time_ms"] >= 0
+
+def test_complex_syntactic_sentences():
+    # Test case: Emotion negation with named entities
+    res = client.post("/api/v1/translate", json={
+        "text": "ojas ko aakansha se pyarr nahi hai",
+        "source_lang": "auto",
+        "target_lang": "en",
+        "include_confidence": True
+    })
+    assert res.status_code == 200
+    d = res.json()["data"]
+    assert "ojas does not love aakansha" in d["translated_text"].lower()
+    assert d["confidence"] >= 0.90
+
+    # Test case: Positive emotion
+    res2 = client.post("/api/v1/translate", json={
+        "text": "mujhe tumse pyar hai",
+        "source_lang": "auto",
+        "target_lang": "en",
+        "include_confidence": True
+    })
+    assert res2.status_code == 200
+    d2 = res2.json()["data"]
+    assert "i love you" in d2["translated_text"].lower()
+    assert d2["confidence"] >= 0.90
 
 def test_reverse_translation_english_to_hinglish():
     response = client.post("/api/v1/translate", json={
